@@ -23,7 +23,6 @@ export default function Home() {
   const [popupData, setPopupData] = useState(IDLE_MESSAGES[0]);
   const [popupHiding, setPopupHiding] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const [splashArrow, setSplashArrow] = useState<number | null>(null);
 
   const lastActivity = useRef(Date.now());
   const lastPopupTime = useRef(0);
@@ -36,34 +35,6 @@ export default function Home() {
     setMounted(true);
   }, []);
 
-  // Random arrows pointing to the Start button on splash
-  useEffect(() => {
-    if (stage !== "splash") {
-      setSplashArrow(null);
-      return;
-    }
-
-    let hideTimeout: ReturnType<typeof setTimeout>;
-
-    const showArrow = () => {
-      const pos = Math.floor(Math.random() * 4);
-      setSplashArrow(pos);
-      hideTimeout = setTimeout(() => setSplashArrow(null), 1800);
-    };
-
-    // First arrow after 3s, then every 4s
-    const firstDelay = setTimeout(() => {
-      showArrow();
-    }, 3000);
-
-    const interval = setInterval(showArrow, 4000);
-
-    return () => {
-      clearTimeout(firstDelay);
-      clearTimeout(hideTimeout);
-      clearInterval(interval);
-    };
-  }, [stage]);
 
   // Reset activity timer on any interaction
   const resetActivity = useCallback(() => {
@@ -255,16 +226,9 @@ export default function Home() {
             <div className="splash-subtitle">
               Find your perfect match&hellip; in predictive maintenance
             </div>
-            <div className="splash-btn-wrapper">
-              <button className="splash-button" onClick={handleStart}>
-                Tap to Start Swiping
-              </button>
-              {splashArrow !== null && (
-                <div className={`splash-arrow splash-arrow-${splashArrow}`}>
-                  {["\u2193", "\u2192", "\u2190", "\u2191"][splashArrow]}
-                </div>
-              )}
-            </div>
+            <button className="splash-button" onClick={handleStart}>
+              Tap to Start Swiping
+            </button>
           </div>
         )}
 
