@@ -1,0 +1,17 @@
+{
+  "name": "SensorLove | SensorHubb",
+  "short_name": "SensorLove",
+  "description": "A data app, not a dating app",
+  "start_url": "/",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "background_color": "#F0F2F4",
+  "theme_color": "#FD267A",
+  "icons": [
+    {
+      "src": "/compressor.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
