@@ -50,14 +50,15 @@ body {
   left: 0;
   right: 0;
   z-index: 100;
-  background: linear-gradient(135deg, #FD267A, #FF6036);
-  color: white;
+  background: #ffffff;
+  color: #21262E;
   text-align: center;
   padding: 14px 16px;
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.3px;
-  box-shadow: 0 2px 12px rgba(253, 38, 122, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-bottom: 3px solid #22c55e;
 }
 
 /* ===== MAIN CONTENT ===== */
@@ -163,25 +164,25 @@ body {
 }
 
 .splash-arrow-0 {
-  top: -48px;
+  top: -70px;
   left: 50%;
   animation: arrowFadeIn 0.3s ease-out forwards, arrowBounceDown 0.7s ease-in-out 0.3s infinite;
 }
 
 .splash-arrow-1 {
-  left: -44px;
+  left: -60px;
   top: 50%;
   animation: arrowFadeIn 0.3s ease-out forwards, arrowBounceRight 0.7s ease-in-out 0.3s infinite;
 }
 
 .splash-arrow-2 {
-  right: -44px;
+  right: -60px;
   top: 50%;
   animation: arrowFadeIn 0.3s ease-out forwards, arrowBounceLeft 0.7s ease-in-out 0.3s infinite;
 }
 
 .splash-arrow-3 {
-  bottom: -48px;
+  bottom: -70px;
   left: 50%;
   animation: arrowFadeIn 0.3s ease-out forwards, arrowBounceUp 0.7s ease-in-out 0.3s infinite;
 }
@@ -531,10 +532,7 @@ body {
 }
 
 .cta-logo-hubb {
-  background: linear-gradient(135deg, #FD267A, #FF6036);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #22c55e;
 }
 
 .cta-motto {
@@ -697,18 +695,17 @@ body {
   100% { transform: scale(1); opacity: 1; }
 }
 
-/* ===== GRADIENT SHIMMER ON BANNER ===== */
+/* Banner accent — green underline pulses subtly */
 .banner {
-  background-size: 200% 200%;
-  animation: bannerShimmer 4s ease-in-out infinite;
+  animation: bannerGlow 3s ease-in-out infinite;
 }
 
-@keyframes bannerShimmer {
+@keyframes bannerGlow {
   0%, 100% {
-    background-position: 0% 50%;
+    border-bottom-color: #22c55e;
   }
   50% {
-    background-position: 100% 50%;
+    border-bottom-color: #4ade80;
   }
 }
 

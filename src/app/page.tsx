@@ -197,7 +197,7 @@ export default function Home() {
         idle >= 15000 &&
         sinceLastPopup >= 15000 &&
         !popupVisibleRef.current &&
-        (stage === "splash" || stage === "profile")
+        stage === "splash"
       ) {
         lastPopupTime.current = now;
         const msg = IDLE_MESSAGES[popupIndexRef.current % IDLE_MESSAGES.length];
@@ -303,11 +303,10 @@ export default function Home() {
               <div className="card-info">
                 <div className="card-name-row">
                   <span className="card-name">Compressor #22</span>
-                  <span className="card-age">7</span>
                   <span className="card-verified">✓</span>
                 </div>
                 <div className="card-location">
-                  📍 Walk-in Cooler, Unit 4B &middot; 2 mi away
+                  📍 Break Room Cooler, Unit 4B &middot; 2 mi away
                 </div>
                 <div className="card-bio">
                   &ldquo;Still technically working.
