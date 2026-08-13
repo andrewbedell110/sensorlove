@@ -50,15 +50,14 @@ body {
   left: 0;
   right: 0;
   z-index: 100;
-  background: #ffffff;
-  color: #21262E;
+  background: linear-gradient(135deg, #FD267A, #FF6036);
+  color: white;
   text-align: center;
   padding: 14px 16px;
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.3px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border-bottom: 3px solid #22c55e;
+  box-shadow: 0 2px 12px rgba(253, 38, 122, 0.3);
 }
 
 /* ===== MAIN CONTENT ===== */
@@ -538,10 +537,7 @@ body {
 .cta-motto {
   font-size: 18px;
   font-weight: 600;
-  background: linear-gradient(135deg, #FD267A, #FF6036);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #042d62;
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 52px;
@@ -695,17 +691,18 @@ body {
   100% { transform: scale(1); opacity: 1; }
 }
 
-/* Banner accent — green underline pulses subtly */
+/* ===== GRADIENT SHIMMER ON BANNER ===== */
 .banner {
-  animation: bannerGlow 3s ease-in-out infinite;
+  background-size: 200% 200%;
+  animation: bannerShimmer 4s ease-in-out infinite;
 }
 
-@keyframes bannerGlow {
+@keyframes bannerShimmer {
   0%, 100% {
-    border-bottom-color: #22c55e;
+    background-position: 0% 50%;
   }
   50% {
-    border-bottom-color: #4ade80;
+    background-position: 100% 50%;
   }
 }
 
