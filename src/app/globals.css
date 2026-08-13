@@ -146,6 +146,46 @@ body {
   line-height: 1.5;
 }
 
+/* Splash button wrapper for arrow positioning */
+.splash-btn-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Arrows pointing at the button */
+.splash-arrow {
+  position: absolute;
+  color: #FD267A;
+  font-size: 38px;
+  font-weight: 900;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 6px rgba(253, 38, 122, 0.4));
+}
+
+.splash-arrow-0 {
+  top: -48px;
+  left: 50%;
+  animation: arrowFadeIn 0.3s ease-out forwards, arrowBounceDown 0.7s ease-in-out 0.3s infinite;
+}
+
+.splash-arrow-1 {
+  left: -44px;
+  top: 50%;
+  animation: arrowFadeIn 0.3s ease-out forwards, arrowBounceRight 0.7s ease-in-out 0.3s infinite;
+}
+
+.splash-arrow-2 {
+  right: -44px;
+  top: 50%;
+  animation: arrowFadeIn 0.3s ease-out forwards, arrowBounceLeft 0.7s ease-in-out 0.3s infinite;
+}
+
+.splash-arrow-3 {
+  bottom: -48px;
+  left: 50%;
+  animation: arrowFadeIn 0.3s ease-out forwards, arrowBounceUp 0.7s ease-in-out 0.3s infinite;
+}
+
 .splash-button {
   background: linear-gradient(135deg, #FD267A, #FF6036);
   color: white;
@@ -534,7 +574,7 @@ body {
 /* ===== IDLE POPUP ===== */
 .idle-popup {
   position: fixed;
-  bottom: 120px;
+  top: 58px;
   left: 50%;
   transform: translateX(-50%);
   background: white;
@@ -622,7 +662,7 @@ body {
 @keyframes popupIn {
   from {
     opacity: 0;
-    transform: translateX(-50%) translateY(16px) scale(0.92);
+    transform: translateX(-50%) translateY(-12px) scale(0.92);
   }
   to {
     opacity: 1;
@@ -637,7 +677,7 @@ body {
   }
   to {
     opacity: 0;
-    transform: translateX(-50%) translateY(16px) scale(0.92);
+    transform: translateX(-50%) translateY(-12px) scale(0.92);
   }
 }
 
@@ -670,4 +710,30 @@ body {
   50% {
     background-position: 100% 50%;
   }
+}
+
+/* ===== SPLASH ARROW ANIMATIONS ===== */
+@keyframes arrowFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes arrowBounceDown {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(10px); }
+}
+
+@keyframes arrowBounceRight {
+  0%, 100% { transform: translateY(-50%) translateX(0); }
+  50% { transform: translateY(-50%) translateX(10px); }
+}
+
+@keyframes arrowBounceLeft {
+  0%, 100% { transform: translateY(-50%) translateX(0); }
+  50% { transform: translateY(-50%) translateX(-10px); }
+}
+
+@keyframes arrowBounceUp {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-10px); }
 }
